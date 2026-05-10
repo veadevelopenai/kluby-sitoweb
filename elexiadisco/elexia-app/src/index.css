@@ -1,0 +1,178 @@
+:root {
+  --bg-dark: #050505;
+  --bg-darker: #000000;
+  --bg-panel: rgba(15, 15, 15, 0.6);
+  --text-main: #f5f5f7;
+  --text-muted: #8a8a93;
+  --text-dark: #111111;
+  
+  --accent-primary: #1ea4ff; /* Vibrant azzurro */
+  --accent-primary-glow: rgba(30, 164, 255, 0.3);
+  --accent-secondary: #00bfff; /* Tech blue for contrast */
+  --accent-tertiary: #5d00ff; /* Deep purple */
+  
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --bg-glass: rgba(20, 20, 25, 0.4);
+  
+  --font-heading: 'Clash Display', sans-serif;
+  --font-body: 'Switzer', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #050505;
+  background-image: radial-gradient(ellipse 100% 60% at 50% -10%, rgba(30, 164, 255, 0.25), transparent 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--accent-primary);
+  color: var(--bg-dark);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark); 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary); 
+}
+
+/* Typography utilities */
+.text-gradient {
+  background: linear-gradient(135deg, #fff 0%, #888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-accent {
+  color: var(--accent-primary);
+}
+
+/* Noise texture overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Ambient Glows */
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.glow-1 {
+  top: -20vh;
+  left: -20vw;
+  width: 80vw;
+  height: 80vw;
+  background: radial-gradient(circle, var(--accent-primary) 0%, rgba(30, 164, 255,0) 65%);
+  opacity: 0.05;
+}
+
+.glow-2 {
+  bottom: 0vh;
+  right: -30vw;
+  width: 100vw;
+  height: 100vw;
+  background: radial-gradient(circle, var(--accent-primary) 0%, rgba(30, 164, 255,0) 60%);
+  opacity: 0.05;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--accent-primary);
+  color: var(--bg-dark);
+  box-shadow: 0 0 20px var(--accent-primary-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 40px rgba(30, 164, 255,0.5);
+  background: var(--accent-primary);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Utility Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(30, 164, 255, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(30, 164, 255, 0); }
+  100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(30, 164, 255, 0); }
+}
