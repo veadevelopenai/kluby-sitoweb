@@ -1431,14 +1431,13 @@
     height: 28px;
     display: block;
   }
-  /* Testo ELEXIA centrato in assoluto */
+  /* Logo testuale a sinistra */
   .brand-text {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.15rem;
-    letter-spacing: 0.15em;
-    pointer-events: none;
+    position: static;
+    transform: none;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+    pointer-events: auto;
   }
   .nav-links, .nav-actions { display: none; }
   .nav-hamburger {
@@ -1463,33 +1462,44 @@
 
   /* === HERO === */
   .hero {
-    padding: 110px 20px 56px;
+    padding: 140px 20px 60px;
     gap: 0;
+    min-height: 100vh;
+    justify-content: center;
+  }
+  .hero.hero-with-video {
+    min-height: 100svh;
   }
   .badge {
-    font-size: 10px;
-    padding: 5px 12px;
-    margin-bottom: 20px;
+    font-size: 9px;
+    padding: 4px 10px;
+    margin-bottom: 16px;
   }
   .hero h1 {
-    font-size: clamp(2.6rem, 10.5vw, 3.4rem);
-    line-height: 1.06;
-    margin-bottom: 16px;
+    font-size: clamp(1.9rem, 7.5vw, 2.5rem);
+    line-height: 1.08;
+    margin-bottom: 14px;
     letter-spacing: -0.025em;
     word-break: keep-all;
     hyphens: none;
   }
-  .hero p {
-    font-size: 0.95rem;
-    line-height: 1.65;
+  .hero > p {
+    font-size: 0.82rem;
+    line-height: 1.5;
     color: var(--text-muted);
     max-width: 100%;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
   .hero-ctas {
     flex-direction: column;
     width: 100%;
     gap: 10px;
+    margin-top: 8px;
+  }
+  .hero-video-overlay {
+    background:
+      radial-gradient(ellipse 100% 70% at 50% 35%, rgba(30, 164, 255, 0.18), transparent 70%),
+      linear-gradient(180deg, rgba(5, 5, 5, 0.45) 0%, rgba(5, 5, 5, 0.6) 60%, #050505 100%);
   }
   .hero-ctas .btn {
     width: 100%;
