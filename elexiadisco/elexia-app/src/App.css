@@ -1476,14 +1476,15 @@
     margin-bottom: 16px;
   }
   .hero h1 {
-    font-size: clamp(1.9rem, 7.5vw, 2.5rem);
-    line-height: 1.08;
-    margin-bottom: 14px;
+    font-size: clamp(2.6rem, 10.5vw, 3.4rem);
+    line-height: 1.06;
+    margin-bottom: 16px;
     letter-spacing: -0.025em;
     word-break: keep-all;
     hyphens: none;
   }
   .hero > p {
+    display: block;
     font-size: 0.82rem;
     line-height: 1.5;
     color: var(--text-muted);
@@ -1493,18 +1494,20 @@
   .hero-ctas {
     flex-direction: column;
     width: 100%;
-    gap: 10px;
+    gap: 8px;
     margin-top: 8px;
+  }
+  .hero-ctas .btn {
+    width: auto;
+    align-self: center;
+    padding: 11px 22px;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
   }
   .hero-video-overlay {
     background:
       radial-gradient(ellipse 100% 70% at 50% 35%, rgba(30, 164, 255, 0.18), transparent 70%),
       linear-gradient(180deg, rgba(5, 5, 5, 0.45) 0%, rgba(5, 5, 5, 0.6) 60%, #050505 100%);
-  }
-  .hero-ctas .btn {
-    width: 100%;
-    padding: 15px 24px;
-    font-size: 0.9rem;
   }
 
   /* === SHOWCASE (PC + PHONE) === */
